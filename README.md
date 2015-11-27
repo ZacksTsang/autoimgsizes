@@ -2,6 +2,10 @@
 基于七牛图片的最佳展示，对于存储在七牛CDN上的图片，利用其现有的 API 对图片的展示进行最优展示处理。
 
 ## 用法
+```
+bower install autoimgsizes
+```
+
 导入 `autoimgsizes.js` 
 
 - requirejs 方式
