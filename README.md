@@ -33,7 +33,7 @@ bower install autoimgsizes
 		<img class="autoImgSizes" src="" data-src="http://xxxxxx.png" data-origin-size="300x300"/>
 	</div>
 	```
-- 更具图片比例
+- 根据图片比例
 
 	```
 	<div>
