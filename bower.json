@@ -1,0 +1,24 @@
+{
+  "name": "zacks",
+  "main": "autoimgsizes.js",
+  "version": "v1.0",
+  "homepage": "https://github.com/ZacksTsang/autoimgsizes",
+  "authors": [
+    "Zacks Tsang <zshaojia@gmail.com>"
+  ],
+  "description": "image auto size from qiniu cnd",
+  "moduleType": [],
+  "keywords": [
+    "autoimgsizes",
+    "autoimage"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
