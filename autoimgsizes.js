@@ -143,7 +143,7 @@
 			for (var i = 0; i < length; i++) {
 				if(!autoImageElems[i]){continue;}
 
-				checkElem(autoImageElems[i],false);
+				checkElem(autoImageElems[i],isReset);
 
 			}
 		}
@@ -186,11 +186,11 @@
 	    },true)
 
 		// window scroll listener
-	    window.addEventListener("scroll",function() {
+	    // window.addEventListener("scroll",function() {
 
-	    	loader();
+	    // 	loader();
 
-	    },true)
+	    // },true)
 
 	    // document DOMNodeInserted listener
 		document.documentElement.addEventListener('DOMNodeInserted', function() {
