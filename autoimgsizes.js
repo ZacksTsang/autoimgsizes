@@ -186,11 +186,11 @@
 	    },true)
 
 		// window scroll listener
-	    // window.addEventListener("scroll",function() {
+	    window.addEventListener("scroll",function() {
 
-	    // 	loader();
+	    	loader();
 
-	    // },true)
+	    },true)
 
 	    // document DOMNodeInserted listener
 		document.documentElement.addEventListener('DOMNodeInserted', function() {
