@@ -1,7 +1,7 @@
 {
   "name": "autoimgsizes",
   "main": "autoimgsizes.js",
-  "version": "v1.0.3",
+  "version": "v1.0.4",
   "homepage": "https://github.com/ZacksTsang/autoimgsizes",
   "authors": [
     "Zacks Tsang <zshaojia@gmail.com>"
