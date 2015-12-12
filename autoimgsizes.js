@@ -176,7 +176,27 @@
 			}
 		}
 
-		loader();
+    	if(!(/d$|^c/.test(document.readyState))){
+			// window load listener
+			window.addEventListener("load",function() {
+
+		    	loader();
+
+		    },true);
+
+			document.addEventListener('DOMContentLoaded', function(){
+
+		    	loader();
+
+			});
+		} else {
+			loader();
+		}
+
+		//, 'fullscreenchange'
+		['focus', 'mouseover', 'click', 'load', 'transitionend', 'animationend', 'webkitAnimationEnd'].forEach(function(name){
+			document.addEventListener(name, loader, true);
+		});
 
 		// window resize listener
 		window.addEventListener("resize",function() {
@@ -205,6 +225,13 @@
 	    	loader();
 
 	    }, true);
+
+	   	document.ready(function(){
+
+	    	loader();
+
+		});
+
 
 
 	})();
