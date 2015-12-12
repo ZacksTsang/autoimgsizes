@@ -178,53 +178,29 @@
 
     	if(!(/d$|^c/.test(document.readyState))){
 			// window load listener
-			window.addEventListener("load",function() {
+			window.addEventListener("load",loader,true);
 
-		    	loader();
-
-		    },true);
-
-			document.addEventListener('DOMContentLoaded', function(){
-
-		    	loader();
-
-			});
+			document.addEventListener('DOMContentLoaded', loader);
 		} else {
 			loader();
 		}
 
 		//, 'fullscreenchange'
-		['focus', 'mouseover', 'click', 'load', 'transitionend', 'animationend', 'webkitAnimationEnd'].forEach(function(name){
+		['focus', 'mouseover', 'click', 'load'].forEach(function(name){
 			document.addEventListener(name, loader, true);
 		});
 
 		// window resize listener
-		window.addEventListener("resize",function() {
-
-	    	refreshElements();
-
-	    },true)
+		window.addEventListener("resize",refreshElements,true)
 
 		// window scroll listener
-	    window.addEventListener("scroll",function() {
-
-	    	loader();
-
-	    },true)
+	    window.addEventListener("scroll",loader,true)
 
 	    // document DOMNodeInserted listener
-		document.documentElement.addEventListener('DOMNodeInserted', function() {
-
-	    	loader();
-
-	    }, true);
+		document.documentElement.addEventListener('DOMNodeInserted', loader, true);
 	    
 	    // document DOMAttrModified listener
-		document.documentElement.addEventListener('DOMAttrModified', function() {
-
-	    	loader();
-
-	    }, true);
+		document.documentElement.addEventListener('DOMAttrModified', loader, true);
 
 	})();
 
