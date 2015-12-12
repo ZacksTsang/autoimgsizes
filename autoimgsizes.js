@@ -226,14 +226,6 @@
 
 	    }, true);
 
-	   	document.ready(function(){
-
-	    	loader();
-
-		});
-
-
-
 	})();
 
 } )( window, document );
