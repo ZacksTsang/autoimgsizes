@@ -103,10 +103,13 @@
 
 		var imgURL = "?imageMogr2/";
 
-		if (elem.getAttribute(autoImgSizeConfig.autoAttr) == "auto") {
+		var isAuto = elem.getAttribute(autoImgSizeConfig.autoAttr) == "auto";
+
+		if (isAuto) {
 
 			imgURL += "thumbnail/"+currentSize.width+"x";
-
+			// 设置图片的宽度
+			elem.style.width = "100%";
 		}else{
 
 			// 判断其图片原始尺寸与容器尺寸的长宽比
@@ -127,12 +130,13 @@
 
 			// 设置图片的高度
 			elem.style.height = currentSize.height/DPR + "px";
+			// 设置图片的宽度
+			elem.style.width = currentSize.width/DPR + "px";
 		}
 
         // 设置最终图片URL
 		elem.setAttribute("src",elem.getAttribute(autoImgSizeConfig.srcAttr)+imgURL);
-		// 设置图片的宽度
-		elem.style.width = currentSize.width/DPR + "px";
+
 	};
 
 	var fectchElements = function(isReset){
