@@ -112,7 +112,7 @@
 			elem.style.width = "100%";
 			if (elem.getAttribute(autoImgSizeConfig.heightAttr)=="true") {
 				// 设置图片的高度
-				elem.style.height = currentSize.height/DPR + "px";
+				elem.style.height = currentSize.width*originSize.height/originSize.width/DPR + "px";
 			}
 		}else{
 
@@ -134,7 +134,7 @@
 
 			// 设置图片的宽度
 			elem.style.width = currentSize.width/DPR + "px";
-			
+
 			// 设置图片的高度
 			elem.style.height = currentSize.height/DPR + "px";
 		}
