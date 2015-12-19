@@ -38,7 +38,7 @@
 		if (!regImg.test(elem.nodeName)) {return;}
 
 		// 是否重新刷新 UI
-		if (isReset) {
+		if (isReset&&(elem.getAttribute(autoImgSizeConfig.autoAttr) != "auto"||elem.getAttribute(autoImgSizeConfig.heightAttr)=="true")) {
 			elem.setAttribute("src","");
 		}else if (elem.getAttribute("src")!=null && elem.getAttribute("src").length > 0) {
 			// 防止重复设置
@@ -110,6 +110,10 @@
 			imgURL += "thumbnail/"+currentSize.width+"x";
 			// 设置图片的宽度
 			elem.style.width = "100%";
+			if (elem.getAttribute(autoImgSizeConfig.heightAttr)=="true") {
+				// 设置图片的高度
+				elem.style.height = currentSize.height/DPR + "px";
+			}
 		}else{
 
 			// 判断其图片原始尺寸与容器尺寸的长宽比
@@ -128,10 +132,11 @@
 			// 然后居中裁剪容器大小的图片
 			imgURL += "/gravity/Center/crop/"+currentSize.width+"x"+currentSize.height;
 
-			// 设置图片的高度
-			elem.style.height = currentSize.height/DPR + "px";
 			// 设置图片的宽度
 			elem.style.width = currentSize.width/DPR + "px";
+			
+			// 设置图片的高度
+			elem.style.height = currentSize.height/DPR + "px";
 		}
 
         // 设置最终图片URL
@@ -169,7 +174,8 @@
 			srcAttr: "data-src",
 			autoAttr : "data-auto", // value: auto
 			originSizeAttr : "data-origin-size",
-			autoImgClass : "autoImgSizes"
+			autoImgClass : "autoImgSizes",
+			heightAttr: "data-height" // value true false
 		}
 
 		autoImgSizeConfig = window.autoImgSizeConfig || window.autoImgSizeConfig || {};
